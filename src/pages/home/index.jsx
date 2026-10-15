@@ -80,12 +80,12 @@ const categories = [
 
 function SectionHeading({ eyebrow, title, description }) {
   return (
-    <div className="mx-auto mb-12 max-w-2xl text-center">
+    <div className="mx-auto mb-8 max-w-2xl px-1 text-center sm:mb-12">
       <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d9c5a0] bg-[#f5eddf] px-4 py-2 text-xs font-bold tracking-[0.18em] text-[#876037]">
         <Leaf size={14} />
         {eyebrow}
       </span>
-      <h2 className="font-bengali text-3xl font-bold leading-snug text-[#422c1d] sm:text-4xl md:text-5xl">
+      <h2 className="font-bengali text-2xl font-bold leading-snug text-[#422c1d] min-[380px]:text-3xl sm:text-4xl md:text-5xl">
         {title}
       </h2>
       <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#786958] sm:text-base">
@@ -116,7 +116,7 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#fffaf1] text-[#422c1d]">
+    <div className="min-h-screen w-full overflow-x-clip bg-[#fffaf1] text-[#422c1d]">
       {/* Announcement bar */}
       <div className="bg-[#29432d] px-4 py-2.5 text-center text-xs text-[#f8ead0] sm:text-sm">
         <span className="mr-2 inline-block">❄</span>
@@ -134,7 +134,7 @@ function Home() {
       />
 
       {/* Hero */}
-      <section className="relative isolate flex min-h-[650px] items-center bg-[#263c2b] sm:min-h-[700px]">
+      <section className="relative isolate flex min-h-[560px] items-center bg-[#263c2b] sm:min-h-[650px] lg:min-h-[700px]">
         <img
           src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2200&q=90"
           alt="সবুজ প্রকৃতি ও কুয়াশাময় বন"
@@ -143,9 +143,9 @@ function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#172c20]/95 via-[#1e3425]/80 to-[#1e3425]/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1d3022]/50 via-transparent to-[#1d3022]/10" />
 
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 px-4 py-12 sm:gap-10 sm:px-6 sm:py-16 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-10 lg:py-20">
           <div className="max-w-2xl text-white">
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-xs font-medium text-[#f8e7c4] backdrop-blur-sm sm:text-sm">
+            <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-2 text-[11px] font-medium text-[#f8e7c4] backdrop-blur-sm sm:mb-7 sm:px-4 sm:py-2.5 sm:text-sm">
               <Snowflake size={15} />
               শীতের সকাল • বাংলার ঐতিহ্য
             </div>
@@ -154,7 +154,7 @@ function Home() {
               মাটির ঘ্রাণে, শীতের পরশে
             </p>
 
-            <h2 className="font-bengali text-5xl font-extrabold leading-[1.22] tracking-tight sm:text-6xl md:text-7xl">
+            <h2 className="font-bengali text-4xl font-extrabold leading-[1.2] tracking-tight min-[380px]:text-5xl sm:text-6xl md:text-7xl">
               বাংলার শীত,
               <br />
               <span className="text-[#e8bd70]">গুড়ের মিষ্টি</span>
@@ -162,15 +162,15 @@ function Home() {
               ঐতিহ্য।
             </h2>
 
-            <p className="mt-6 max-w-lg font-bengali text-base leading-8 text-white/80 sm:text-lg">
+            <p className="mt-5 max-w-lg font-bengali text-sm leading-7 text-white/80 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
               খেজুরের রসের চিরচেনা ঘ্রাণ আর গ্রামবাংলার স্মৃতি—আপনার পরিবারের
               জন্য নিয়ে আসুন শীতের প্রিয় স্বাদ।
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-7 flex w-full flex-col gap-3 min-[420px]:w-auto min-[420px]:flex-row sm:mt-9">
               <button
                 onClick={goToProducts}
-                className="group flex items-center gap-3 rounded-full bg-[#e4b86b] px-7 py-4 font-bengali text-sm font-bold text-[#392617] transition hover:bg-[#f0ca89]"
+                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-[#e4b86b] px-6 py-3.5 font-bengali text-sm font-bold text-[#392617] transition hover:bg-[#f0ca89] min-[420px]:w-auto sm:px-7 sm:py-4"
               >
                 গুড় কিনুন
                 <ArrowRight
@@ -180,13 +180,13 @@ function Home() {
               </button>
               <a
                 href="#story"
-                className="flex items-center gap-2 rounded-full border border-white/40 px-7 py-4 font-bengali text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/40 px-6 py-3.5 font-bengali text-sm font-semibold text-white transition hover:bg-white/10 min-[420px]:w-auto sm:px-7 sm:py-4"
               >
                 আমাদের গল্প
               </a>
             </div>
 
-            <div className="mt-12 flex flex-wrap gap-x-7 gap-y-4 border-t border-white/20 pt-7">
+            <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 border-t border-white/20 pt-5 sm:mt-12 sm:gap-x-7 sm:pt-7">
               <div className="flex items-center gap-2 text-sm text-white/85">
                 <Leaf className="text-[#e8bd70]" size={19} />
                 দেশি ঐতিহ্য
@@ -233,7 +233,7 @@ function Home() {
 
       {/* Trust strip */}
       <section className="relative z-10 -mt-1 bg-[#fffaf1] py-7 sm:py-9">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-5 sm:grid-cols-4 sm:px-8 lg:px-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-5 px-4 sm:gap-6 sm:px-6 md:px-8 sm:grid-cols-4 lg:px-10">
           {[
             {
               icon: Leaf,
@@ -275,19 +275,19 @@ function Home() {
 
       {/* Categories */}
       <section id="categories" className="px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto w-full max-w-7xl">
           <SectionHeading
             eyebrow="আমাদের সংগ্রহ"
             title="আপনার পছন্দের গুড়"
             description="গ্রামবাংলার শীতের স্বাদ থেকে বেছে নিন আপনার পছন্দের ধরন।"
           />
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 min-[520px]:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {categories.map((category, index) => (
               <button
                 key={category.title}
                 onClick={goToProducts}
-                className="group relative h-[340px] overflow-hidden rounded-[24px] text-left sm:h-[400px]"
+                className="group relative h-[280px] overflow-hidden rounded-2xl text-left min-[420px]:h-[320px] sm:h-[400px] sm:rounded-[24px]"
               >
                 <img
                   src={category.image}
@@ -319,13 +319,13 @@ function Home() {
 
       {/* Story section */}
       <section id="story" className="bg-[#eae2d1]">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2 lg:gap-20 lg:px-10">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:gap-12 sm:px-6 sm:py-20 md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-10 lg:py-28">
           <div className="relative">
             <div className="absolute -left-3 -top-3 h-full w-full rounded-[28px] border border-[#b89b6a]" />
             <img
               src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=90"
               alt="প্রাকৃতিক সবুজ বন ও গ্রামের পরিবেশ"
-              className="relative h-[400px] w-full rounded-[24px] object-cover sm:h-[540px]"
+              className="relative h-[280px] w-full rounded-2xl object-cover min-[420px]:h-[340px] sm:h-[440px] sm:rounded-[24px] lg:h-[540px]"
             />
             <div className="absolute -bottom-5 right-4 rounded-2xl bg-[#29432d] px-6 py-5 text-white shadow-xl sm:right-8">
               <p className="font-bengali text-xl font-bold">বাংলার ঐতিহ্য</p>
@@ -340,7 +340,7 @@ function Home() {
               <span className="h-px w-8 bg-[#a27b41]" />
               আমাদের গল্প
             </span>
-            <h2 className="font-bengali text-4xl font-extrabold leading-tight text-[#422c1d] sm:text-5xl">
+            <h2 className="font-bengali text-3xl font-extrabold leading-tight text-[#422c1d] min-[380px]:text-4xl sm:text-5xl">
               একটুখানি শীত,
               <br />
               এক চামচ <span className="text-[#9c692b]">নস্টালজিয়া।</span>
@@ -366,20 +366,20 @@ function Home() {
 
       {/* Products */}
       <section id="products" className="px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto w-full max-w-7xl">
           <SectionHeading
             eyebrow="শীতের বিশেষ"
             title="মিষ্টি হোক প্রতিটি মুহূর্ত"
             description="আপনার পছন্দের গুড় বেছে নিন। পণ্যের দাম ও বিবরণ পরে তোমার প্রকৃত পণ্যের তথ্য অনুযায়ী পরিবর্তন করতে পারবে।"
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 min-[520px]:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {products.map((product) => (
               <article
                 key={product.id}
                 className="group overflow-hidden rounded-[24px] border border-[#e8ddca] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#6e4a22]/10"
               >
-                <div className="relative h-[280px] overflow-hidden bg-[#f2e8d6]">
+                <div className="relative h-[220px] overflow-hidden bg-[#f2e8d6] min-[420px]:h-[260px] sm:h-[280px]">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -453,11 +453,11 @@ function Home() {
           className="absolute inset-0 -z-20 h-full w-full object-cover"
         />
         <div className="absolute inset-0 -z-10 bg-[#203724]/85" />
-        <div className="mx-auto flex max-w-7xl flex-col items-center px-5 py-20 text-center sm:px-8 sm:py-28">
+        <div className="mx-auto flex max-w-7xl flex-col items-center px-4 py-14 text-center sm:px-6 sm:py-20 md:px-8 md:py-28">
           <p className="font-bengali text-sm font-semibold tracking-widest text-[#e4b86b]">
             শীতের মিষ্টি আমন্ত্রণ
           </p>
-          <h2 className="mt-5 max-w-3xl font-bengali text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
+          <h2 className="mt-5 max-w-3xl font-bengali text-3xl font-extrabold leading-tight text-white min-[380px]:text-4xl sm:text-5xl md:text-6xl">
             পিঠাপুলির আয়োজনে
             <br />
             <span className="text-[#e4b86b]">খেজুরের গুড় চাই।</span>
@@ -475,8 +475,11 @@ function Home() {
       </section>
 
       {/* Cart demo */}
-      <section id="cart" className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-        <div className="mx-auto max-w-4xl rounded-[28px] border border-[#e6d8c2] bg-white p-6 sm:p-9">
+      <section
+        id="cart"
+        className="px-4 py-14 sm:px-6 sm:py-20 md:px-8 lg:px-10 lg:py-24"
+      >
+        <div className="mx-auto max-w-4xl rounded-2xl border border-[#e6d8c2] bg-white p-4 sm:rounded-[28px] sm:p-6 md:p-9">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-bold tracking-widest text-[#9b713c]">
@@ -513,7 +516,7 @@ function Home() {
                 {cart.map((product, index) => (
                   <div
                     key={`${product.id}-${index}`}
-                    className="flex items-center justify-between gap-4 rounded-xl bg-[#f8f3e9] p-4"
+                    className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-[#f8f3e9] p-3 min-[420px]:p-4"
                   >
                     <div>
                       <p className="font-bengali text-sm font-bold">
